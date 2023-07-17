@@ -1,0 +1,120 @@
+@import "_var.scss";
+
+.useful {
+  margin-bottom: 70px;
+
+  &__title {
+    margin-bottom: 26px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+    color: $background;
+  }
+
+  &__card {
+    background: $greyLight;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+
+    &-descr {
+      margin-bottom: 38px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 33px;
+      color: $background;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 190px;
+      padding: 30px;
+    }
+
+    &-btn {
+      align-self: flex-start;
+      padding: 17px 35px;
+      border: 2px solid $primary;
+      border-radius: 10px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      color: $primary;
+      transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+
+      &:focus {
+        background-color: $primaryLigth;
+        color: $white;
+      }
+
+      &:active {
+        background-color: $primaryShade;
+        border: 2px solid $primaryShade;
+        color: $white;
+      }
+    }
+  }
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__swiper-navigation {
+    position: absolute;
+    right: 0;
+    top: -58px;
+  }
+
+  &__btn-prev {
+    margin-right: 9px;
+  }
+}
+
+@media (max-width: 1350px) {
+  .useful {
+    &__card {
+      &-img {
+        max-height: 202px;
+      }
+
+      &-content {
+        height: 194px;
+      }
+
+      &-descr {
+        margin-bottom: 0px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+@media (max-width: 766px) {
+  .useful {
+    margin-bottom: 117px;
+
+    &__title {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    &__swiper-navigation {
+      right: 109px;
+      top: auto;
+      bottom: -51px;
+    }
+
+  }
+}

@@ -1,0 +1,778 @@
+@import "_var.scss";
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 32px;
+
+  &__left {
+    grid-column: 1/4;
+  }
+
+  &__right {
+    grid-column: 4/13;
+  }
+
+  &__mobail-title {
+    display: none;
+  }
+
+  .swiper-wrapper {
+    box-sizing: border-box;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    color: $white;
+    background-color: $primary;
+  }
+
+  .swiper-pagination-bullet {
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    line-height: 32px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: $primary;
+    border: 2px solid $primary;
+    opacity: 1;
+    transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+
+    &:focus {
+      background-color: $primaryLigth;
+      color: $white;
+    }
+
+    &:active {
+      background-color: $primaryShade;
+      border: 2px solid $primaryShade;
+      color: $white;
+    }
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 7px);
+  }
+
+  &__pagination {
+    text-align: center;
+    margin-bottom: 68px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .filter {
+    &-mobaile {
+      display: none;
+    }
+
+    &__wrap {
+      margin-bottom: 88px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 130%;
+      color: $background;
+    }
+
+    &__subtitle {
+      margin-bottom: 9px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      color: $grayShade;
+    }
+
+    &__sale {
+      .filter__subtitle {
+        margin-bottom: 12px;
+      }
+    }
+
+    &__color {
+      .filter__subtitle {
+        margin-bottom: 6px;
+      }
+    }
+
+    &__name {
+      display: flex;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: $grayShade;
+    }
+
+    &__label {
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      margin-bottom: 11.5px;
+    }
+
+    &__list {
+      margin-bottom: 26px;
+    }
+
+    &__price {
+      margin-bottom: 39px;
+    }
+  }
+
+  .price {
+    &__inputs {
+      margin-top: -7px;
+      margin-bottom: 8px;
+    }
+
+    &__input {
+      max-width: 88px;
+      width: 100%;
+      padding: 4px 13px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: $grayShade;
+      border: 1px solid $grey;
+      border-radius: 2px;
+      transition: border 0.3s ease, background-color 0.3s ease;
+
+      &::placeholder {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: $grayShade;
+      }
+
+      &:hover {
+        border: 1px solid $primary;
+      }
+
+      &:focus {
+        border: 1px solid $primary;
+        background-color: $pinkViolet;
+      }
+
+      &:active {
+        border: 1px solid $primaryShade;
+        background-color: $white;
+      }
+    }
+
+    &__label {
+      &:first-child {
+        margin-right: 63px;
+      }
+    }
+
+    .noUi-target {
+      max-width: 296px;
+      background: $mdGrey;
+      border-radius: 3px;
+      border: none;
+      box-shadow: none;
+    }
+
+    .noUi-horizontal {
+      height: 3px;
+      cursor: pointer;
+    }
+
+    .noUi-connect {
+      background-color: $primary;
+
+      &:active {
+        background-color: $primaryShade;
+      }
+    }
+
+    .noUi-handle::after,
+    .noUi-handle::before {
+      display: none
+    }
+
+    .noUi-handle {
+      border: 9px solid transparent;
+      border-bottom: 13px solid $primary;
+      border-radius: 0;
+      background: transparent;
+      cursor: grabbing;
+      box-shadow: none;
+      transition: border-bottom 0.3s ease;
+
+      &:hover {
+        border-bottom: 13px solid $primaryLigth;
+      }
+
+      &:focus {
+        border-bottom: 13px solid $primaryShade;
+      }
+
+      &:active {
+        border-bottom: 13px solid $primaryShade;
+      }
+    }
+
+    .noUi-horizontal .noUi-handle {
+      width: 13px;
+      height: 26px;
+      right: -9px;
+      top: -12px;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+
+  &__banner {
+    &-content {
+      padding: 30px;
+      background-color: $background;
+      border-radius: 0px 0px 10px 10px;
+    }
+
+    &-title {
+      font-family: 'Playfair';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 32px;
+      color: $gold;
+    }
+
+    &-descr {
+      margin-bottom: 16px;
+      max-width: 190px;
+      font-weight: 300;
+      font-size: 16.8px;
+      line-height: 120%;
+      color: $grey;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 120%;
+      color: $primary;
+
+      & span {
+        margin-right: 5px;
+      }
+
+      svg {
+        vertical-align: middle;
+        padding-left: 5px;
+
+        g {
+
+          path,
+          circle {
+            transition: stroke .3s ease-out, fill .3s ease-out;
+          }
+        }
+      }
+
+      &:focus {
+        span {
+          border-bottom: 2px solid;
+        }
+
+        svg {
+          g {
+            path {
+              stroke: $white;
+              transition: stroke .3s ease-out;
+            }
+
+            circle {
+              fill: $primaryLigth;
+              transition: fill .3s ease-out;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        span {
+          border-bottom: 2px solid $primary;
+          transition: border .1s ease-out;
+        }
+
+        svg {
+          g {
+            path {
+              stroke: $white;
+              transition: stroke .3s ease-out;
+            }
+
+            circle {
+              fill: $primary;
+              transition: fill .3s ease-out;
+            }
+          }
+        }
+      }
+
+      &:active {
+        span {
+          color: $primaryShade;
+          border-bottom: 2px solid;
+          transition: color .3s ease-out, border .1s ease-out;
+        }
+
+        svg {
+          g {
+            path {
+              stroke: $white;
+              transition: stroke .3s ease-out;
+            }
+
+            circle {
+              fill: $primaryShade;
+              stroke: $primaryShade;
+              transition: fill .3s ease-out, stroke .3s ease-out;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__right-title {
+    margin-bottom: 25px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    color: $background;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    max-width: 296px;
+    width: 100%;
+    margin-top: 0px !important;
+    margin-bottom: 32px;
+    padding: 30px;
+    background: $greyLight;
+    border-radius: 10px;
+
+    &:not(:nth-child(3n)) {
+      margin-right: 32px;
+    }
+
+    &-rating {
+      margin-bottom: 10px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: $secondary;
+    }
+
+    &-img-block {
+      height: 130px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    &-title {
+      max-width: 236px;
+      margin-bottom: 24px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 130%;
+      color: $background;
+    }
+
+    &-img {
+      width: 120%;
+      align-self: flex-end;
+
+      &-last {
+        width: 90%;
+      }
+    }
+
+    &-price {
+      margin-bottom: 24px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: $grayShade;
+    }
+
+    &-btn {
+      max-width: 128px;
+      padding: 16px 35px;
+      border: 2px solid $primary;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      color: $primary;
+      background-color: transparent;
+      transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+
+      &:focus {
+        background-color: $primaryLigth;
+        color: $white;
+      }
+
+      &:active {
+        background-color: $primaryShade;
+        border: 2px solid $primaryShade;
+        color: $white;
+      }
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .catalog {
+    display: block;
+
+    &__mobail-title {
+      display: block;
+      margin-bottom: 16px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 130%;
+      color: $background;
+    }
+
+    &__right-title {
+      display: none;
+    }
+
+    .menu-active {
+      display: flex !important;
+      flex-direction: column;
+    }
+
+    .dropdown {
+
+      &-selected {
+        position: relative;
+        padding-right: 30px;
+        padding-left: 5px;
+        border: none;
+        color: $primary;
+        background-color: transparent;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 120%;
+        transition: color 0.3s ease, background-color 0.3s ease;
+
+        &:hover {
+          color: $primaryLigth;
+        }
+
+        &:focus-visible {
+          color: $primaryShade;
+          background-color: $pinkViolet;
+        }
+
+        &:active {
+          color: $primaryShade;
+          background-color: transparent;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          display: block;
+          border-width: 0 0 1.5px 1.5px;
+          border-color: $primary;
+          border-style: solid;
+          width: 7px;
+          height: 7px;
+          pointer-events: none;
+          transform: translateY(-50%) rotate(-45deg);
+          transition: transform 0.3s ease-in-out, border-color 0.3s ease;
+        }
+
+        &:hover::after {
+          border-color: $primaryLigth;
+        }
+
+        &:focus-visible::after {
+          border-color: $primaryShade;
+        }
+
+        &:active::after {
+          border-color: $primaryShade;
+        }
+
+        &.active::after {
+          transform: translateY(-50%) rotate(135deg);
+        }
+      }
+
+      &-options {
+        display: none;
+        max-width: 91px;
+        width: 100%;
+        position: absolute;
+        top: 26px;
+        background-color: $white;
+        border: 1px solid #ccc;
+        max-height: 250px;
+        overflow-y: auto;
+        z-index: 99;
+      }
+
+      &-option {
+        padding: 5px 10px;
+        cursor: pointer;
+        background-color: $white;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: $pinkLight;
+        }
+
+        &:focus {
+          background-color: $pinkLight;
+        }
+
+        &:active {
+          background-color: $primaryLigth;
+        }
+      }
+    }
+
+    &__banner {
+      display: none;
+    }
+
+    .filter {
+      display: flex;
+
+      &__subtitle {
+        z-index: 999;
+        width: 187px;
+        background-color: $greyLight;
+        border-radius: 10px;
+        padding: 9px 15px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: $background;
+      }
+
+      &__wrap {
+        position: relative;
+        display: flex;
+        margin-bottom: -17px;
+
+        .dropdown:not(:last-child) {
+          margin-right: 32px;
+        }
+
+        .dropdown {
+          margin-top: -32px;
+        }
+      }
+
+      &-desktop {
+        display: none;
+      }
+
+      &-mobaile {
+        display: block;
+        padding-top: 10px;
+        margin-right: 43px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: $background;
+      }
+
+      &__list {
+        max-width: 187px;
+        width: 100%;
+        border: 1px solid $mdGrey;
+        border-radius: 0px 0px 10px 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      &__item {
+        padding-left: 30px;
+        margin-bottom: 0;
+      }
+
+      &__category {
+        .filter__list {
+          max-height: 378px;
+        }
+      }
+
+      &__color {
+        .filter__list {
+          max-height: 378px;
+        }
+      }
+    }
+
+    .price {
+      &__inputs {
+        max-width: 187px;
+        width: 100%;
+        border: 1px solid $mdGrey;
+        border-radius: 0px 0px 10px 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      &__label {
+        display: flex;
+      }
+
+      &__slider {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width:1000px) {
+  .catalog {
+    .filter {
+      flex-direction: column;
+
+      &__wrap {
+        flex-wrap: wrap;
+        margin-bottom: 27px;
+      }
+
+      &__title {
+        margin-bottom: 48px;
+      }
+    }
+  }
+}
+
+@media (max-width: 766px) {
+  .catalog {
+    &__pagination {
+      margin-top: 16px;
+      margin-bottom: 71px;
+    }
+
+    &__mobail-title {
+      margin-bottom: 6px;
+    }
+
+    .filter__title {
+      margin-bottom: 16px;
+    }
+
+    .filter__subtitle {
+      width: 140px
+    }
+
+    .filter__wrap {
+      .dropdown {
+        margin-top: 0px;
+      }
+
+      .dropdown:not(:last-child) {
+        margin-right: 0px;
+      }
+
+      .dropdown:not(:nth-child(2n)) {
+        margin-right: 16px;
+      }
+
+      .dropdown:nth-last-child(-n+2) {
+        margin-top: -32px;
+      }
+    }
+
+    &__card {
+      max-width: 140px;
+      padding: 16px;
+      margin-bottom: 16px;
+
+      &:not(:nth-child(2n)) {
+        margin-right: 16px;
+      }
+
+      &-img {
+        width: 100%;
+        object-fit: contain;
+      }
+
+      &-img-block {
+        height: 53px;
+        margin-bottom: 21px;
+      }
+
+      &-rating {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 130%;
+        margin-bottom: 1px;
+
+        svg {
+          width: 13px;
+          height: 12px;
+          margin-right: 4px;
+        }
+      }
+
+      &-title {
+        margin-bottom: 16px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+      }
+
+      &-price {
+        margin-bottom: 16px;
+      }
+
+      &-btn {
+        padding: 10px 23px;
+      }
+    }
+  }
+}

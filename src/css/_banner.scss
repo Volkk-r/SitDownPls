@@ -1,0 +1,189 @@
+@import "_var.scss";
+
+.banner {
+  margin-bottom: 70px;
+
+  &__btn-mobile {
+    display: none;
+  }
+
+  &__slide {
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &-btn {
+      background-color: $primary;
+      border-radius: 10px;
+      border: 2px solid $primary;
+      padding: 20px 50.5px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+      color: $white;
+      transition: background-color 0.3s ease, border 0.3s ease;
+
+      &:hover {
+        background-color: $primaryLigth;
+        border: 2px solid $primaryLigth;
+      }
+
+      &:focus {
+        background-color: $primaryLigth;
+        border: 2px solid $primaryShade;
+      }
+
+      &:active {
+        background-color: $primaryShade;
+        border: 2px solid $primaryShade;
+      }
+    }
+
+    &-descr {
+      max-width: 500px;
+      margin-top: 80px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 65px;
+      color: #999999;
+      margin-bottom: 49px;
+
+      &-last {
+        max-width: 590px;
+        color: $white;
+      }
+    }
+  }
+
+  &-1 {
+    background-image: url('../img/banner1.png');
+  }
+
+  &-2 {
+    background-image: url('../img/banner2.png');
+  }
+
+  &-3 {
+    background-image: url('../img/banner3.png');
+  }
+
+  .swiper-pagination {
+    z-index: 2;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: $background;
+    width: 14px;
+    height: 14px;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 8px);
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: var(--swiper-pagination-bottom, 18px);
+    top: var(--swiper-pagination-top, auto);
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1350px) {
+  .banner {
+    &-1 {
+      background-image: url('../img/banner1024-1.png');
+    }
+
+    &-2 {
+      background-image: url('../img/banner1024-2.png');
+    }
+
+    &-3 {
+      background-image: url('../img/banner1024-3.png');
+    }
+  }
+}
+
+@media (max-width: 766px) {
+  .banner {
+    &-1 {
+      background-image: url('../img/banner320-1.png');
+    }
+
+    &-2 {
+      background-image: url('../img/banner320-2.png');
+    }
+
+    &-3 {
+      background-image: url('../img/banner320-3.png');
+    }
+
+    &__slide-descr {
+      max-width: 204px;
+      margin-top: 30px;
+      margin-left: 17px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+    }
+
+    &__slide {
+      height: 210px;
+
+      &-btn {
+        display: none;
+      }
+    }
+
+    &__btn-mobile {
+      display: block;
+      background-color: $primary;
+      border-radius: 10px;
+      border: 2px solid $primary;
+      padding: 20px 105.5px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+      color: $white;
+      transition: background-color 0.3s ease, border 0.3s ease;
+    }
+
+    &__btn-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__swiper {
+      margin-bottom: 32px;
+    }
+  }
+
+  .banner .swiper-horizontal>.swiper-pagination-bullets,
+  .banner .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .banner .swiper-pagination-custom,
+  .banner .swiper-pagination-fraction {
+    bottom: var(--swiper-pagination-bottom, 4px);
+    top: var(--swiper-pagination-top, auto);
+    left: 0;
+    width: 100%;
+  }
+
+  .banner .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .banner .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
+  }
+
+  .banner .swiper-pagination-bullet {
+    background-color: $background;
+    width: 6px;
+    height: 6px;
+  }
+
+}

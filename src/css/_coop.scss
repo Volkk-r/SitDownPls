@@ -1,0 +1,161 @@
+@import "_var.scss";
+
+.cooperation {
+  margin-bottom: 70px;
+
+  &__title {
+    margin-bottom: 32px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+    color: $background;
+  }
+
+  &__block {
+    max-width: 845px;
+    margin-bottom: 34px;
+  }
+
+  &__subtitle {
+    margin-bottom: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    color: $background;
+  }
+
+  &__text {
+    margin-bottom: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+    color: $grayShade;
+  }
+
+  &__descr {
+    max-width: 615px;
+    margin-bottom: 12px;
+    padding-left: 37px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $grayShade;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+
+  .descr1 {
+    background-image: url("../img/coop1.svg");
+  }
+
+  .descr2 {
+    background-image: url("../img/coop2.svg");
+  }
+
+  .descr3 {
+    background-image: url("../img/coop3.svg");
+  }
+
+  &__posttitle {
+    margin-bottom: 12px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: $secondary;
+  }
+
+  &__list {
+    max-width: 840px;
+    padding-left: 18px;
+    margin: 0 0 32px;
+  }
+
+  &__item {
+    margin-bottom: 12px;
+    padding-left: 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+    color: $grayShade;
+
+    &::marker {
+      color: $secondary;
+      font-weight: 600;
+      line-height: 29px;
+    }
+  }
+
+  &__date {
+    max-width: 624px;
+    width: 100%;
+    padding: 22px 0 22px 109px;
+    margin: 0;
+    font-size: 24px;
+    line-height: 36px;
+    color: $grayShade;
+    background-image: url("../img/coop4.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+}
+
+@media (max-width: 766px) {
+  .cooperation {
+    &__title {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    &__subtitle {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+
+      &-mobail-mini {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 180%;
+      margin-bottom: -4px;
+    }
+
+    &__descr {
+      margin-bottom: 11px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+    }
+
+    &__posttitle {
+      margin-top: 13px;
+    }
+
+    &__item {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 177%;
+    }
+
+    &__date {
+      max-width: 240px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      background-size: 36px;
+      padding: 0px 0 0px 52px;
+    }
+  }
+}

@@ -1,0 +1,112 @@
+@import "_var.scss";
+
+.oxford {
+  margin-bottom: 70px;
+
+  &__block {
+    background-image: url("../img/oxford.png");
+    min-height: 600px;
+  }
+
+  &__content {
+    padding-top: 154px;
+
+  }
+
+  &__title {
+    font-family: 'Playfair';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 120%;
+    color: $gold;
+  }
+
+  &__descr {
+    max-width: 500px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 50.5px;
+    line-height: 115%;
+    color: $white;
+    margin-bottom: 47px;
+  }
+
+  &__btn {
+    background: $primary;
+    border-radius: 10px;
+    border: 2px solid $primary;
+    padding: 20px 31px;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 100%;
+    color: $white;
+    transition: background-color 0.3s ease, border 0.3s ease;
+
+    &:hover {
+      background-color: $primaryLigth;
+      border: 2px solid $primaryLigth;
+    }
+
+    &:focus {
+      background-color: $primaryLigth;
+      border: 2px solid $primaryShade;
+    }
+
+    &:active {
+      background-color: $primaryShade;
+      border: 2px solid $primaryShade;
+    }
+  }
+}
+
+
+@media (max-width: 1350px) {
+  .oxford {
+    &__block {
+      background-image: url("../img/oxford1024.png");
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .oxford {
+    &__content {
+      padding-left: 36px;
+    }
+  }
+}
+
+@media (max-width: 766px) {
+  .oxford {
+    margin-bottom: 163px;
+
+    &__title {
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 120%;
+    }
+
+    &__content {
+      position: relative;
+      padding-top: 33px;
+      padding-left: 12px;
+    }
+
+    &__descr {
+      font-size: 17px;
+      max-width: 187px;
+    }
+
+    &__block {
+      min-height: 210px;
+      background-image: url("../img/ox320.png");
+    }
+
+    &__btn {
+      position: absolute;
+      bottom: -203px;
+      padding: 20px 85px;
+    }
+  }
+}

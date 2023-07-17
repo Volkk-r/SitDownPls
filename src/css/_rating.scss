@@ -1,0 +1,225 @@
+@import "_var.scss";
+
+.rating {
+  margin-bottom: 69px;
+
+  &__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+    color: $background;
+    margin-bottom: 26px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    max-width: 296px;
+    width: 100%;
+    margin-bottom: 32px;
+    padding: 30px;
+    background: $greyLight;
+    border-radius: 10px;
+
+    &:not(:nth-child(4n)) {
+      margin-right: 32px;
+    }
+
+    &-rating {
+      margin-bottom: 10px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: $secondary;
+    }
+
+    &-img-block {
+      height: 130px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    &-title {
+      max-width: 236px;
+      margin-bottom: 24px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 130%;
+      color: $background;
+    }
+
+    &-img {
+      width: 120%;
+      align-self: flex-end;
+
+      &-last {
+        width: 90%;
+      }
+    }
+
+    &-price {
+      margin-bottom: 24px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: $grayShade;
+    }
+
+    &-btn {
+      max-width: 128px;
+      padding: 16px 35px;
+      border: 2px solid $primary;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      color: $primary;
+      transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+
+      &:focus {
+        background-color: $primaryLigth;
+        color: $white;
+      }
+
+      &:active {
+        background-color: $primaryShade;
+        border: 2px solid $primaryShade;
+        color: $white;
+      }
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+    display: block;
+    padding: 20px 36px;
+    background-color: $primary;
+    border: 2px solid $primary;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16.5px;
+    line-height: 100%;
+    color: $white;
+    transition: background-color 0.3s ease, border 0.3s ease;
+
+    &:hover {
+      background-color: $primaryLigth;
+      border: 2px solid $primaryLigth;
+    }
+
+    &:focus {
+      background-color: $primaryLigth;
+      border: 2px solid $primaryShade;
+    }
+
+    &:active {
+      background-color: $primaryShade;
+      border: 2px solid $primaryShade;
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .rating {
+    &__card:not(:nth-child(4n)) {
+      margin-right: 0;
+    }
+
+    &__card:not(:nth-child(3n)) {
+      margin-right: 32px;
+    }
+
+    &__card:nth-last-child(-n+2) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .rating {
+    &__card:not(:nth-child(3n)) {
+      margin-right: 0;
+    }
+
+    &__card:not(:nth-child(2n)) {
+      margin-right: 30px;
+    }
+  }
+}
+
+@media (max-width: 766px) {
+  .rating {
+    &__title {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    &__card {
+      max-width: 140px;
+      padding: 16px;
+      margin-bottom: 16px;
+
+      &:not(:nth-child(2n)) {
+        margin-right: 16px;
+      }
+
+      &-img {
+        width: 100%;
+        object-fit: contain;
+      }
+
+      &-img-block {
+        height: 53px;
+        margin-bottom: 21px;
+      }
+
+      &-rating {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 130%;
+        margin-bottom: 1px;
+
+        svg {
+          width: 13px;
+          height: 12px;
+          margin-right: 4px;
+        }
+      }
+
+      &-title {
+        margin-bottom: 16px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+      }
+
+      &-price {
+        margin-bottom: 16px;
+      }
+
+      &-btn {
+        padding: 10px 23px;
+      }
+    }
+
+    &__wrapper {
+      margin-bottom: 16px;
+    }
+  }
+}
